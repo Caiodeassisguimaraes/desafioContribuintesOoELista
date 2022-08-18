@@ -61,11 +61,9 @@ public class TaxPayer {
 		this.educationSpending = educationSpending;
 	}
 
-	//Revisar os metodos para os calculos
-	
 	public double salaryTax() {
 		double salaryTax;
-		double salaryMonth = salaryIncome/12;
+		double salaryMonth = salaryIncome / 12;
 		if (salaryMonth < 3000.00) {
 			salaryTax = 0.0;
 		} else if (salaryMonth < 5000.00) {
@@ -97,9 +95,6 @@ public class TaxPayer {
 	}
 
 	public double grossTax() {
-		//double grossTax;
-		//grossTax = salaryTax() + servicesTax() + capitalTax();
-		//return grossTax;
 		return salaryTax() + servicesTax() + capitalTax();
 	}
 
@@ -118,21 +113,15 @@ public class TaxPayer {
 		return grossTax() - taxRebate();
 	}
 
-	//Metodo toString esta certo
-	
 	public String toString() {
-		return "Imposto bruto total: " + String.format("%.2f", grossTax()) + String.format("%n") 
-		+ "Abatimento: " + String.format("%.2f", taxRebate()) + String.format("%n")
-		+ "Imposto devido: " + String.format("%.2f", netSalary()) + String.format("%n");
+		return 
+				"Imposto bruto total: "
+				+String.format("%.2f", grossTax())
+				+String.format("%n") + "Abatimento: "
+				+String.format("%.2f", taxRebate())
+				+String.format("%n") + "Imposto devido: "
+				+String.format("%.2f", netSalary())
+				+String.format("%n");
 	}
-	
-	/*public String toString() {
-		return "Renda anual com salário: " + String.format("%.2f", salaryIncome) + String.format("%n") 
-		+ "Renda anual com prestação de serviço: " + String.format("%.2f", servicesIncome) + String.format("%n")
-		+ "Renda anual com ganho de capital: " + String.format("%.2f", capitalIncome) + String.format("%n")
-		+ "Gastos médicos: " + String.format("%.2f", healthSpending) + String.format("%n")
-		+"Gastos educacionais: "+ String.format("%.2f", educationSpending) + String.format("%n");
-	}*/
-	
 
 }
